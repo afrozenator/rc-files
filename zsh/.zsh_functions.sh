@@ -25,3 +25,16 @@ function tmux_new_session() {
 function tmux_attach_session() {
   tmux attach -t $1
 }
+
+# cd many levels up in a single go.
+function .. {
+  local levels=${1:-1}
+  local path=""
+
+  for ((i=0; i<levels; i++)); do
+    path="../${path}"
+  done
+
+  cd $path
+}
+
