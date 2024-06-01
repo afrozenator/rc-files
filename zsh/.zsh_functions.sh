@@ -17,6 +17,10 @@ function act_venv() {
 #   source ~/venvs/$venv/bin/
 # }
 
+function jax_venv() {
+  source ~/VirtualEnvsi/jax-metal/bin/activate
+}
+
 # tmux helpers
 function tmux_new_session() {
   tmux new -s $1
