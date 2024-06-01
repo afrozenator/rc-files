@@ -1,9 +1,13 @@
 setopt INTERACTIVE_COMMENTS
 
-export PATH="/Users/afro/Library/Python/3.9/bin:$PATH"
+export PATH="/Users/afroz/Library/Python/3.9/bin:$PATH"
 
 # %1~ shows the last dir, %~ will show the full one.
 export PS1="[%D{%Y-%m-%d}] %n@%~$ "
+if [[ "$TERM" =~ 256color ]]; then
+  export PS1="%F{green}[%D{%Y-%m-%d}]%f %n@%F{purple}%~%f$ "
+  export PS1="%{$(tput setaf 2)%}[%D{%Y-%m-%d}]%{$(tput sgr0)%} %n@%{$(tput setaf 5)%}%~%{$(tput sgr0)%}$ "
+fi
 
 alias python='python3'
 alias c='clear'
