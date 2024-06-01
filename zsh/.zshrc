@@ -1,7 +1,5 @@
 setopt INTERACTIVE_COMMENTS
 
-export PATH="/Users/afroz/Library/Python/3.9/bin:$PATH"
-
 # %1~ shows the last dir, %~ will show the full one.
 export PS1="[%D{%Y-%m-%d}] %n@%~$ "
 if [[ "$TERM" =~ 256color ]]; then
