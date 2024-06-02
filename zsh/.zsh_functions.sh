@@ -18,7 +18,7 @@ function act_venv() {
 # }
 
 function jax_venv() {
-  source ~/VirtualEnvsi/jax-metal/bin/activate
+  source ~/VirtualEnvs/jax-metal/bin/activate
 }
 
 # tmux helpers
