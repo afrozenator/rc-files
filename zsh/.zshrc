@@ -7,6 +7,9 @@ if [[ "$TERM" =~ 256color ]]; then
   export PS1="%{$(tput setaf 2)%}[%D{%Y-%m-%d}]%{$(tput sgr0)%} %n@%{$(tput setaf 5)%}%~%{$(tput sgr0)%}$ "
 fi
 
+# TODO(afro): Set this if needed.
+# TFDS_DATA_DIR
+
 alias python='python3'
 alias c='clear'
 alias rb='source ~/.zshrc'
