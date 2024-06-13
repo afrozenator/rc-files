@@ -93,3 +93,25 @@ let g:solarized_termtrans=1
 " put https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim
 " in ~/.vim/colors/ and uncomment:
 " colorscheme solarized
+
+
+function! InsertPythonUnittestTemplate()
+  if empty(glob(expand('%')))
+    call setline(1, ["import unittest", "", "", "class Test(unittest.TestCase):", "", "  def test_case(self):", "    pass", "", "if __name__ == '__main__':", "  unittest.main()"])
+    " moves the cursor to the end of the file.
+    " normal! G
+    " moves the cursor to the numbered line.
+    normal! 6Go
+    " opens a new line below the current line and switches to insert mode.
+    " normal! o
+    " normal! ^cw
+    " startinsert
+    normal! i
+    normal! 5i 
+    startinsert
+  endif
+endfunction
+
+autocmd BufNewFile *_test.py call InsertPythonUnittestTemplate()
+
+

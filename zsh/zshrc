@@ -16,6 +16,9 @@ alias rb='source ~/.zshrc'
 alias ob='vim ~/.zshrc'
 alias of='vim ~/.zsh_functions.sh'
 
+# Test out the local changes in a new vimrc before upstreaming.
+alias testvim='vim -u /Users/afroz/Code/rc-files/vim/vimrc'
+
 # TODO(afro): Make sure this is doing something?
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
