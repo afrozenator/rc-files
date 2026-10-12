@@ -12,6 +12,8 @@ source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 
 alias gln='git log --oneline --name-only'
 alias gcm='git commit -m '
+alias gb='git branch'
+alias gs='git status'
 
 setopt INTERACTIVE_COMMENTS
 
@@ -111,7 +113,9 @@ setopt SHARE_HISTORY
 unsetopt HIST_VERIFY
 
 # https://github.com/junegunn/fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
 
 # OpenClaw CLI
 export PATH="$HOME/.openclaw/bin:$PATH"
@@ -134,3 +138,8 @@ bindkey "\e\e[C" forward-word
 bindkey "^[^[[C" forward-word
 bindkey "\e[1;3C" forward-word
 bindkey "\e[1;5C" forward-word
+
+# User-installed command-line tools (Claude Code)
+export PATH="$HOME/.local/bin:$PATH"
+
+autoload -Uz compinit && compinit
